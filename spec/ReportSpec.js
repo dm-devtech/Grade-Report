@@ -24,6 +24,11 @@ describe('Report', () => {
     it('takes a different input and outputs count of grades given', () => {
       expect(test.gradeSummary("Green, Amber, Amber, Red, Red")).toEqual("Green: 1\nAmber: 2\nRed: 2")
     })
+
+    it('takes a different input and outputs count of grades given', () => {
+      spyOn(test, 'gradeCount').and.returnValue([8,9,10])
+      expect(test.gradeSummary("Green, Amber, Amber, Red, Red")).toEqual("Green: 8\nAmber: 9\nRed: 10")
+    })
   })
 
 
